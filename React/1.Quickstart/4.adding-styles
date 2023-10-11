@@ -1,0 +1,9 @@
+// specify css classes with className attribute
+<img className="avatar" />
+
+// write the css rules for it in a separate css file
+.avatar {
+    border-radius: 50%;
+}
+
+// for css you still add a <link> tag to the html file

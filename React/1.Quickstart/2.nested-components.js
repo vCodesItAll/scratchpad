@@ -17,3 +17,4 @@ export default function MyApp() {
 
 // React components start with capital letters i.e. MyButton
 // HTML tags start with lowercase letters i.e. button
+// export default keywords specify the main component in the file
