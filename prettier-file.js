@@ -1,5 +1,37 @@
-function countGrade(scores){
-   /* 
+function countGrade(scores) {
+    let gradeObj = {
+        S: 0,
+        A: 0,
+        B: 0,
+        C: 0,
+        D: 0,
+        X: 0,
+    };
+    scores.filter((score) => {
+        if (score >= 100) {
+        // add 1 to S key
+        gradeObj.S++;
+        } else if (score >= 90) {
+        // add 1 to A key
+        gradeObj.A++;
+        } else if (score >= 80) {
+        // add 1 to B key
+        gradeObj.B++;
+        } else if (score >= 70) {
+        // add 1 to C key
+        gradeObj.C++;
+        } else if (score >= 60) {
+        // add 1 to D key
+        gradeObj.D++;
+        } else {
+        // add 1 to X key
+        gradeObj.X++;
+        }
+    });
+    return gradeObj;
+}
+
+/* 
 Parameters: 
   - number array = scores
 Return: 
@@ -19,4 +51,3 @@ Translate:
   - Going to take the score array, create an object and iterate through to return the grades and the number of 
   scores that fit that grade.
   */
-  }
