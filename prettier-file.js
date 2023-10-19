@@ -1,34 +1,26 @@
 function countGrade(scores) {
-    let gradeObj = {
-        S: 0,
-        A: 0,
-        B: 0,
-        C: 0,
-        D: 0,
-        X: 0,
-    };
-    scores.filter((score) => {
-        if (score >= 100) {
-        // add 1 to S key
-        gradeObj.S++;
-        } else if (score >= 90) {
-        // add 1 to A key
-        gradeObj.A++;
-        } else if (score >= 80) {
-        // add 1 to B key
-        gradeObj.B++;
-        } else if (score >= 70) {
-        // add 1 to C key
-        gradeObj.C++;
-        } else if (score >= 60) {
-        // add 1 to D key
-        gradeObj.D++;
-        } else {
-        // add 1 to X key
-        gradeObj.X++;
+   
+    let getScore = function(upperBound, lowerBound) {
+        if (scores >= lowerBound && scores <= upperBound) {
+            getScore++;
         }
-    });
-    return gradeObj;
+        else 
+            return getScore;
+    };
+
+
+    80
+    
+    return {
+        // put upper bound, and lower bound
+        S:getScore(scores,101,100), 
+        A:getScore(scores,99,90), 
+        B:getScore(scores,89,80), 
+        C:getScore(scores,79,70), 
+        D:getScore(scores,69,60),
+        E:getScore(scores,59,0),
+        X:getScore(scores,-2,-1)
+    };
 }
 
 /* 
