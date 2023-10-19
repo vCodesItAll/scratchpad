@@ -1,21 +1,22 @@
-function double(array) {
-    // Use array.map() to return a new array with each value twice
-    // as large as the corresponding value in the passed in array.
-    const result = array.map((num) => num * 2);
-    return result;
-}
-
-/*
- params: an array of integers
-    return: js - an array with every integer in the same index but doubled in value
-    example: var someNumbers = [1,2,10,57];
-            double(someNumbers); // should return [2,4,20,114]
-            
-    concerns: I am aging. I am weak.
-    explain:
-        I would look at the first number
-        I would multiply it by 2 and write that number in the OG number's place
-        I would do this down the line until all given numbers have been changed
-    positive self talk: I am experienced and I still got it.  I am a firecracker. I am all-seeing and all powerful
-    translate: use the map function on the array object
-*/
+function countGrade(scores){
+   /* 
+Parameters: 
+  - number array = scores
+Return: 
+  - object with key: grade and values: the number of scores that reached that minimum value
+Example: 
+  - countGrade([50,60,70,80,90,100]) should return {S:1, A:1, B:1, C:2, D:1, X:0}
+Concerns: 
+  - array-filter: must use .filter; undefined input; non-number input
+Explain: 
+  - I will write all the grade categories and write a zero next to them and then look at the scores.  
+    With the first score I will look for the grade category that has the grading rules that accept the score.  
+    For the applicable grade category I will change the zero to a 1.  I will look at the next score and then 
+    continue the process, adding 1 to the value number.
+Positive Self Talk: 
+  - These are simple practice katas.  They are not meant to trip me up.
+Translate: 
+  - Going to take the score array, create an object and iterate through to return the grades and the number of 
+  scores that fit that grade.
+  */
+  }
