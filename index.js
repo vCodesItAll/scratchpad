@@ -1,7 +1,16 @@
+function comp(a, b) {
+    if (!a || !b) {
+        return false;
+    }
 
-function double(array) {
-    return array.map(value => value * 2);
+    const sortedA = a.sort((x, y) => x - y);
+    const sortedB = b.sort((x, y) => x - y);
+
+    for (let i = 0; i < sortedA.length; i++) {
+        if (sortedA[i] * sortedA[i] !== sortedB[i]) {
+            return false;
+        }
+    }
+
+    return true;
 }
-
-var someNumbers = [1,2,10,57];
-double(someNumbers); // should return [2,4,20,114]
