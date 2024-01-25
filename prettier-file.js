@@ -1,10 +1,16 @@
-function findOdd(A) {
-  //happy coding!
-  return 0;
-}function findOdd(A) {
-  let result = 0;
-  for (let i = 0; i < A.length; i++) {
-    result ^= A[i];
+
+function getSum(a, b) {
+  let sum = 0;
+  if (a === b) {
+    return a;
+  } else if (a < b) {
+    for (let i = a; i <= b; i++) {
+      sum += i;
+    }
+  } else {
+    for (let i = b; i <= a; i++) {
+      sum += i;
+    }
   }
-  return result;
+  return sum;
 }
