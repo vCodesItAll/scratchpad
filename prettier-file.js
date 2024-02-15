@@ -1,24 +1,12 @@
-function Sudoku(board) {
-  var sqrt = Math.sqrt(board.length);
-  var esum = board.length * (board.length + 1) / 2;
-
-  function checkDigits(selection) {
-    return selection.reduce(function(sum, digit) {
-      return typeof digit == 'number' ? sum + digit : NaN;
-    }, 0) == esum;
+function factorial(n) {
+  if (n < 0) return null;
+  let res = [1];
+  for (let i = 1; i <= n; i++) {
+      for (let j = 0, carry = 0; j < res.length || carry > 0; j++) {
+          carry += (res[j] || 0) * i;
+          res[j] = carry % 10;
+          carry = carry / 10 | 0;
+      }
   }
-
-  return {
-    isValid: function() {
-      return board.every(function(row, i) {
-        return checkDigits(row) &&
-               checkDigits(board.map(function(row) {
-                 return row[i];
-               })) &&
-               checkDigits(board.map(function(_, j) {
-                 return board[(i/sqrt|0)*sqrt+(j/sqrt|0)][i%sqrt*sqrt+j%sqrt];
-               }));
-      });
-    }
-  };
+  return res.reverse().join('');
 }
