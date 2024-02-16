@@ -1,12 +1,22 @@
-function factorial(n) {
-  if (n < 0) return null;
-  let res = [1];
-  for (let i = 1; i <= n; i++) {
-      for (let j = 0, carry = 0; j < res.length || carry > 0; j++) {
-          carry += (res[j] || 0) * i;
-          res[j] = carry % 10;
-          carry = carry / 10 | 0;
-      }
+function topThreeWords(text) {
+  const words = text.toLowerCase().match(/\b[a-z']+\b/gi);
+  const wordCount = {};
+
+  if (words) {
+    words.forEach(word => {
+      wordCount[word] = (wordCount[word] || 0) + 1;
+    });
   }
-  return res.reverse().join('');
+
+  const sortedWords = Object.keys(wordCount).sort((a, b) => {
+    const frequencyComparison = wordCount[b] - wordCount[a];
+
+    if (frequencyComparison === 0) {
+      return a.localeCompare(b);
+    }
+
+    return frequencyComparison;
+  });
+
+  return sortedWords.slice(0, 3);
 }
